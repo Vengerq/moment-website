@@ -1,0 +1,67 @@
+// USER VARIABLES SECTION
+
+$fontsize: 16px // Body Font Size
+$black: #333 // Text Color
+$lineheight: 1.3 // Document Line Height
+$userfont: graphik, sans-serif // User Font Family
+$systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif // System Font Family
+
+// Bootstrap compatible gutter variable => $gutter
+$grid-gutter-width: 30px
+$gutter: $grid-gutter-width
+
+// IMPORT SECTION
+
+@import 'node_modules/bootstrap/scss/bootstrap-reboot.scss' // Bootstrap Reboot collection
+@import 'node_modules/bootstrap/scss/mixins/_breakpoints.scss' // Bootstrap Breakpoints mixin
+@import 'node_modules/bootstrap/scss/bootstrap-grid.scss' // Optional Bootstrap Grid
+@import 'node_modules/bootstrap/scss/_utilities.scss' // Optional Bootstrap Utilites
+
+// FONTS LOAD SECTION
+
+@mixin font($fname, $fstyle, $fweight, $furl)
+	@font-face
+		font-family: $fname
+		font-style: $fstyle
+		font-weight: $fweight
+		src: url($furl) format('woff2')
+
+@include font('graphik', normal, 400, '../fonts/GraphikLCg-Regular-webfont.woff2')
+@include font('graphik', italic, 500, '../fonts/GraphikLCg-Medium-webfont.woff2')
+@include font('graphik', normal, 600, '../fonts/GraphikLCg-Semibold-webfont.woff2')
+@include font('graphik', italic, 700, '../fonts/GraphikLCg-Bold-webfont.woff2')
+
+// GENERAL CSS SETTINGS
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $black
+	color: #fff
+
+html
+	font-size: $fontsize
+
+body
+	font-family: $userfont
+	line-height: $lineheight
+	color: $black
+	background-color: #EEEEE
+	min-width: 320px
+	position: relative
+	overflow-x: hidden
+	box-sizing: border-box
+
+.img-responsive
+	max-width: 100%
+
+.visually-hidden
+	position: absolute
+	width: 1px
+	height: 1px
+	margin: -1px
+	border: 0
+	padding: 0
+	clip: rect (0 0 0 0)
+	overflow: hidden
